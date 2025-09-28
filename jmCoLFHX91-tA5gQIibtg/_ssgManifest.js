@@ -1,0 +1,2 @@
+self.__SSG_MANIFEST = new Set(["\u002F404", "\u002F[region]\u002F[brand]", "\u002F[region]\u002F[brand]\u002Fabout", "\u002F[region]\u002F[brand]\u002Fcontact", "\u002F[region]\u002F[brand]\u002Fdownload-pdf", "\u002F[region]\u002F[brand]\u002Ffind", "\u002F[region]\u002F[brand]\u002Fprivacy", "\u002F[region]\u002F[brand]\u002Fproduct\u002F[id]", "\u002F[region]\u002F[brand]\u002Fwarranty", "\u002Facademy\u002Fknow", "\u002Floyalty\u002Fknow", "\u002Floyalty\u002Frules"]);
+self.__SSG_MANIFEST_CB && self.__SSG_MANIFEST_CB()

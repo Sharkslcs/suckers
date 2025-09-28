@@ -1,0 +1,187 @@
+.styles_pageContent__yp3md {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px
+}
+
+.styles_formWrapperAccount__NEr0l {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+    width: 360px;
+    max-width: 90vw
+}
+
+.styles_formWrapperAccount__NEr0l h1 {
+    color: var(--color-primary);
+    text-align: center
+}
+
+.styles_formWrapperAccount__NEr0l>span {
+    font-size: 16px;
+    text-align: center
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL p,
+.styles_pageContent__yp3md .styles_text__nhcOL ul li {
+    font-size: 16px;
+    font-weight: 400
+}
+
+.styles_pageContent__yp3md {
+    margin-top: 28px;
+    margin-bottom: 28px
+}
+
+.styles_pageContent__yp3md>h2 {
+    margin-bottom: 36px
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL {
+    box-shadow: var(--elevation-2);
+    background: var(--color-white);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL ul {
+    margin-bottom: 15px;
+    padding-left: 16px
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL ul li {
+    margin-bottom: 10px
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL .styles_img__TUufG {
+    margin-top: 10px;
+    position: relative;
+    padding-bottom: 30%;
+    margin-bottom: 10px
+}
+
+@media(max-width:900px) {
+    .styles_pageContent__yp3md .styles_text__nhcOL .styles_img__TUufG {
+        padding-bottom: 42%
+    }
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL .styles_img__TUufG img {
+    object-fit: contain
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL a {
+    text-decoration: underline;
+    overflow-wrap: break-word;
+    color: var(--color-primary-light)
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL .styles_undecoratedLink__w5eI_ {
+    text-decoration: underline;
+    color: #303030
+}
+
+.styles_pageContent__yp3md .styles_text__nhcOL .styles_link__d0Mi2 {
+    display: flex;
+    margin: auto;
+    border: 1px solid;
+    padding: 10px 20px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px
+}
+
+.styles_formWrapperAccount__iqwoU {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+    width: 360px;
+    max-width: 90vw
+}
+
+.styles_formWrapperAccount__iqwoU h1 {
+    color: var(--color-primary);
+    text-align: center
+}
+
+.styles_formWrapperAccount__iqwoU>span {
+    font-size: 16px;
+    text-align: center
+}
+
+.styles_container__YSlsS {
+    border-top: 4px solid var(--color-secondary-light);
+    padding-top: 1rem;
+    margin-bottom: 1rem
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly {
+    gap: 5px;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    color: var(--color-base-3);
+    font-size: var(--font-size-md)
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly a,
+.styles_container__YSlsS .styles_breadcrumb__vhhly span {
+    cursor: pointer;
+    color: var(--color-base-3)
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly .styles_current___LECT {
+    color: var(--color-secondary-light)
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly .styles_home__5JCo1,
+.styles_container__YSlsS .styles_breadcrumb__vhhly .styles_resultSearch__aA6ML {
+    gap: 5px;
+    display: flex;
+    align-items: center
+}
+
+@media(max-width:900px) {
+    .styles_container__YSlsS .styles_breadcrumb__vhhly .styles_home__5JCo1,
+    .styles_container__YSlsS .styles_breadcrumb__vhhly .styles_resultSearch__aA6ML {
+        display: none
+    }
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly .styles_back__gUj7D {
+    align-items: center;
+    color: var(--color-primary);
+    cursor: pointer;
+    gap: 5px;
+    display: flex;
+    margin-right: 24px
+}
+
+@media(max-width:900px) {
+    .styles_container__YSlsS .styles_breadcrumb__vhhly .styles_back__gUj7D {
+        margin-right: 16px
+    }
+}
+
+.styles_container__YSlsS .styles_breadcrumb__vhhly .styles_back__gUj7D span {
+    color: var(--color-primary)
+}
