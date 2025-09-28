@@ -1,0 +1,583 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a//dev/null b/styles.css
+index 0000000000000000000000000000000000000000..82c92fa1bab34cd6324eee44662b17688aaf30e9 100644
+--- a//dev/null
++++ b/styles.css
+@@ -0,0 +1,574 @@
++:root {
++  --color-primary: #003f6b;
++  --color-secondary: #0094d9;
++  --color-text: #1a1a1a;
++  --color-muted: #4b4b4b;
++  --color-background: #f5f7fa;
++  --color-border: #d9dde3;
++  --font-family: 'Roboto', Arial, sans-serif;
++}
++
++* {
++  box-sizing: border-box;
++}
++
++body {
++  margin: 0;
++  font-family: var(--font-family);
++  color: var(--color-text);
++  background-color: #fff;
++  line-height: 1.5;
++}
++
++a {
++  color: inherit;
++  text-decoration: none;
++}
++
++a:hover,
++a:focus {
++  text-decoration: underline;
++}
++
++img {
++  max-width: 100%;
++  display: block;
++}
++
++.skip-link {
++  position: absolute;
++  left: -999px;
++  top: 1rem;
++  background: var(--color-primary);
++  color: #fff;
++  padding: 0.75rem 1rem;
++  border-radius: 0.5rem;
++  z-index: 9999;
++}
++
++.skip-link:focus {
++  left: 1rem;
++}
++
++.container {
++  width: min(1120px, 92%);
++  margin: 0 auto;
++}
++
++.site-header {
++  background: #fff;
++  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
++  position: sticky;
++  top: 0;
++  z-index: 50;
++}
++
++.header__inner {
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  gap: 1.5rem;
++  padding: 1rem 0;
++}
++
++.header__logo img {
++  height: auto;
++}
++
++.main-nav__list {
++  display: flex;
++  gap: 1.5rem;
++  align-items: center;
++  list-style: none;
++  margin: 0;
++  padding: 0;
++  font-weight: 500;
++}
++
++.main-nav__list a {
++  color: var(--color-text);
++}
++
++.has-submenu {
++  position: relative;
++}
++
++.menu-toggle {
++  background: none;
++  border: none;
++  font: inherit;
++  cursor: pointer;
++  display: inline-flex;
++  align-items: center;
++  gap: 0.25rem;
++  color: var(--color-text);
++}
++
++.menu-toggle:focus,
++.menu-toggle:hover {
++  color: var(--color-primary);
++}
++
++.submenu {
++  position: absolute;
++  top: calc(100% + 0.5rem);
++  left: 0;
++  min-width: 200px;
++  display: none;
++  flex-direction: column;
++  gap: 0.5rem;
++  background: #fff;
++  border: 1px solid var(--color-border);
++  border-radius: 0.75rem;
++  padding: 0.75rem 1rem;
++  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
++}
++
++.has-submenu.is-open .submenu {
++  display: flex;
++}
++
++.header-actions {
++  display: flex;
++  align-items: center;
++  gap: 1rem;
++}
++
++.dropdown {
++  position: relative;
++}
++
++.dropdown__trigger {
++  display: inline-flex;
++  align-items: center;
++  gap: 0.5rem;
++  padding: 0.5rem 0.75rem;
++  border-radius: 999px;
++  border: 1px solid transparent;
++  background: var(--color-background);
++  color: var(--color-text);
++  cursor: pointer;
++  font: inherit;
++}
++
++.dropdown__trigger:hover,
++.dropdown__trigger:focus {
++  border-color: var(--color-secondary);
++}
++
++.dropdown__icon {
++  font-size: 0.75rem;
++}
++
++.dropdown__menu {
++  position: absolute;
++  display: none;
++  top: calc(100% + 0.5rem);
++  right: 0;
++  background: #fff;
++  border-radius: 0.75rem;
++  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
++  padding: 0.75rem 1rem;
++  list-style: none;
++  margin: 0;
++  min-width: 180px;
++  border: 1px solid var(--color-border);
++}
++
++.dropdown.is-open .dropdown__menu {
++  display: block;
++}
++
++.dropdown__menu li {
++  display: flex;
++  align-items: center;
++  gap: 0.5rem;
++  padding: 0.35rem 0;
++  font-size: 0.95rem;
++}
++
++.hero {
++  padding: 4rem 0;
++  background: linear-gradient(135deg, #f3f8ff 0%, #ffffff 40%);
++}
++
++.hero__inner {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
++  gap: 2.5rem;
++  align-items: center;
++}
++
++.hero__content h1 {
++  font-size: clamp(2rem, 3vw, 2.75rem);
++  margin-bottom: 1rem;
++  color: var(--color-primary);
++}
++
++.hero__content p {
++  margin-bottom: 2rem;
++  color: var(--color-muted);
++}
++
++.search-panels {
++  display: grid;
++  gap: 1.25rem;
++}
++
++.search-panel {
++  background: #fff;
++  padding: 1.25rem;
++  border-radius: 1rem;
++  border: 1px solid var(--color-border);
++  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
++}
++
++.search-panel h2 {
++  font-size: 1.1rem;
++  margin: 0 0 0.75rem;
++}
++
++.search-panel label {
++  display: block;
++  font-size: 0.9rem;
++  color: var(--color-muted);
++  margin-bottom: 0.5rem;
++}
++
++.input-group {
++  display: flex;
++  gap: 0.5rem;
++}
++
++.input-group input {
++  flex: 1;
++  padding: 0.75rem 1rem;
++  border-radius: 0.75rem;
++  border: 1px solid var(--color-border);
++  font-size: 1rem;
++}
++
++.input-group button {
++  background: var(--color-secondary);
++  color: #fff;
++  border: none;
++  border-radius: 0.75rem;
++  padding: 0.75rem 1.5rem;
++  font-weight: 600;
++  cursor: pointer;
++  transition: filter 0.2s ease;
++}
++
++.input-group button:hover,
++.input-group button:focus {
++  filter: brightness(0.95);
++}
++
++.hero__slider {
++  width: min(520px, 100%);
++  margin: 0 auto;
++}
++
++.section {
++  padding: 4rem 0;
++}
++
++.section--highlight {
++  background: var(--color-background);
++}
++
++.section__header {
++  display: flex;
++  flex-direction: column;
++  gap: 0.5rem;
++  margin-bottom: 2rem;
++}
++
++.section__header h2 {
++  margin: 0;
++  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
++  color: var(--color-primary);
++}
++
++.section__header p {
++  margin: 0;
++  color: var(--color-muted);
++}
++
++.section__header--with-action {
++  justify-content: space-between;
++  align-items: flex-end;
++  flex-direction: row;
++  gap: 1rem;
++}
++
++.section__action {
++  background: transparent;
++  border: 1px solid var(--color-secondary);
++  color: var(--color-secondary);
++  padding: 0.65rem 1.25rem;
++  border-radius: 999px;
++  font-weight: 600;
++  transition: all 0.2s ease;
++}
++
++.section__action:hover,
++.section__action:focus {
++  background: var(--color-secondary);
++  color: #fff;
++}
++
++.segment-card,
++.category-card,
++.brand-card,
++.release-card {
++  background: #fff;
++  border-radius: 1rem;
++  padding: 1.25rem;
++  height: 100%;
++  display: flex;
++  flex-direction: column;
++  gap: 1rem;
++  align-items: center;
++  justify-content: center;
++  text-align: center;
++  border: 1px solid var(--color-border);
++  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
++}
++
++.segment-card span,
++.category-card span {
++  font-weight: 600;
++  color: var(--color-text);
++}
++
++.category-card {
++  text-decoration: none;
++  color: var(--color-text);
++}
++
++.category-card:hover,
++.category-card:focus {
++  border-color: var(--color-secondary);
++}
++
++.brand-card img {
++  height: 60px;
++  object-fit: contain;
++}
++
++.brand-card h3 {
++  margin: 0;
++  font-size: 1.3rem;
++}
++
++.brand-card p {
++  color: var(--color-muted);
++  margin: 0;
++}
++
++.brand-card__link,
++.release-card__link {
++  margin-top: auto;
++  font-weight: 600;
++  color: var(--color-secondary);
++}
++
++.release-card h3 {
++  margin: 0;
++  font-size: 1.25rem;
++}
++
++.release-card p {
++  margin: 0;
++  color: var(--color-muted);
++}
++
++.newsletter {
++  background: var(--color-primary);
++  color: #fff;
++  padding: 4rem 0;
++}
++
++.newsletter__inner {
++  display: flex;
++  flex-wrap: wrap;
++  align-items: center;
++  justify-content: space-between;
++  gap: 1.5rem;
++}
++
++.newsletter__form {
++  display: flex;
++  gap: 0.75rem;
++  width: min(400px, 100%);
++}
++
++.newsletter__form input {
++  flex: 1;
++  padding: 0.75rem 1rem;
++  border: none;
++  border-radius: 0.75rem;
++  font-size: 1rem;
++}
++
++.newsletter__form button {
++  background: var(--color-secondary);
++  color: #fff;
++  border: none;
++  border-radius: 0.75rem;
++  padding: 0.75rem 1.5rem;
++  font-weight: 600;
++  cursor: pointer;
++}
++
++.site-footer {
++  background: #0a1a2a;
++  color: #fff;
++  padding-top: 3rem;
++}
++
++.footer__inner {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
++  gap: 2rem;
++  padding-bottom: 2.5rem;
++}
++
++.footer__about p {
++  color: rgba(255, 255, 255, 0.75);
++}
++
++.footer__links h3 {
++  margin-top: 0;
++  font-size: 1.1rem;
++}
++
++.footer__links ul {
++  list-style: none;
++  margin: 0;
++  padding: 0;
++  display: grid;
++  gap: 0.5rem;
++}
++
++.footer__links a {
++  color: rgba(255, 255, 255, 0.8);
++}
++
++.footer__bottom {
++  border-top: 1px solid rgba(255, 255, 255, 0.15);
++  padding: 1rem 0;
++}
++
++.footer__bottom-inner {
++  display: flex;
++  flex-wrap: wrap;
++  align-items: center;
++  justify-content: space-between;
++  gap: 1rem;
++  color: rgba(255, 255, 255, 0.7);
++}
++
++.footer__social {
++  display: flex;
++  gap: 1rem;
++}
++
++.back-to-top {
++  position: fixed;
++  right: 1.5rem;
++  bottom: 1.5rem;
++  width: 3rem;
++  height: 3rem;
++  border-radius: 50%;
++  border: none;
++  background: var(--color-secondary);
++  color: #fff;
++  font-size: 1.5rem;
++  display: none;
++  align-items: center;
++  justify-content: center;
++  cursor: pointer;
++  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
++  z-index: 100;
++}
++
++.back-to-top.visible {
++  display: flex;
++}
++
++.swiper-button-prev,
++.swiper-button-next {
++  background: rgba(0, 0, 0, 0.6);
++  width: 40px;
++  height: 40px;
++  border-radius: 50%;
++  top: 45%;
++  color: #fff;
++}
++
++.swiper-button-prev::after,
++.swiper-button-next::after {
++  font-size: 1.2rem;
++}
++
++.swiper-pagination-bullet-active {
++  background: var(--color-secondary);
++}
++
++.sr-only {
++  position: absolute;
++  width: 1px;
++  height: 1px;
++  padding: 0;
++  margin: -1px;
++  overflow: hidden;
++  clip: rect(0, 0, 0, 0);
++  white-space: nowrap;
++  border: 0;
++}
++
++@media (max-width: 960px) {
++  .header__inner {
++    flex-wrap: wrap;
++    justify-content: center;
++  }
++
++  .main-nav__list {
++    flex-wrap: wrap;
++    justify-content: center;
++  }
++
++  .header-actions {
++    width: 100%;
++    justify-content: center;
++  }
++
++  .section__header--with-action {
++    flex-direction: column;
++    align-items: flex-start;
++  }
++}
++
++@media (max-width: 640px) {
++  .search-panels {
++    grid-template-columns: 1fr;
++  }
++
++  .input-group {
++    flex-direction: column;
++  }
++
++  .input-group button {
++    width: 100%;
++  }
++
++  .newsletter__form {
++    flex-direction: column;
++  }
++
++  .newsletter__form button {
++    width: 100%;
++  }
++}
+ 
+EOF
+)
