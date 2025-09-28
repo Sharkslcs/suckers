@@ -1,0 +1,15 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a//dev/null b/web/.gitignore
+index 0000000000000000000000000000000000000000..6d36bf78ebf7d914e96f66235700110d6b3bfd18 100644
+--- a//dev/null
++++ b/web/.gitignore
+@@ -0,0 +1,6 @@
++/node_modules
++/.next
++/out
++npm-debug.log*
++.yarn*
++.DS_Store
+ 
+EOF
+)
